@@ -7,7 +7,8 @@ require('dotenv').config();
 
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const host = '0.0.0.0';
+const PORT = process.env.PORT || 3000;
 
 require('./models/Book');
 
@@ -30,7 +31,7 @@ connection.once('open', () => {
 // routes
 
 // Bootstrap server
-app.listen(PORT, () => {
+app.listen(PORT, host, () => {
 	console.log(`Server listening on port ${PORT}.`);
 });
 
