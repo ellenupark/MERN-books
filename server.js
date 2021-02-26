@@ -12,7 +12,6 @@ const PORT = process.env.PORT || 3000;
 
 require('./models/Book');
 
-// configure body parser for AJAX requests
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
@@ -28,9 +27,6 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
-// routes
-
-// Bootstrap server
 app.listen(PORT, host, () => {
 	console.log(`Server listening on port ${PORT}.`);
 });
